@@ -8,6 +8,7 @@
 var YOUTUBE_SEARCH_URL = 'https://www.googleapis.com/youtube/v3/search';
 
 function getSearchData(query, callback) {
+    console.log('we here');
     var query = {
         part: 'snippet',
         maxResults: 10,
@@ -38,10 +39,8 @@ function renderSearchResults(JSON) {
 
 function watchSubmit() {
     $('.js-search-form').submit(function(e){
-        // var query = $(this).find('.js-query').val();
-        var query = $('.js-query').val();
-        getSearchData(query, renderSearchResults);
-        getSearchData(query, renderSearchResults);
+        e.preventDefault();
+        var query = $(this).find('.js-query').val();
         getSearchData(query, renderSearchResults);
     });
 }
