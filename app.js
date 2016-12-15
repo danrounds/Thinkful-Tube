@@ -8,7 +8,6 @@
 var YOUTUBE_SEARCH_URL = 'https://www.googleapis.com/youtube/v3/search';
 
 function getSearchData(query, callback) {
-    console.log('we here');
     var query = {
         part: 'snippet',
         maxResults: 10,
